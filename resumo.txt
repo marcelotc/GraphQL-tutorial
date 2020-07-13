@@ -1,0 +1,41 @@
+REST API
+
+GET /users
+POST /users
+PUT /users/:id
+DELETE /users/:id
+
+-----------------------------
+
+GRAPHQL
+
+POST /graphql
+
+query/mutation/subscription
+
+{
+    query todosUsuarios {
+        users()
+    }
+
+    query todosPedidos {
+        orders()
+    }
+}
+
+=================================
+
+{
+    mutation updateUser {
+        updateUser(id: 1) {
+            nome: "Marcelo"
+        }
+    }
+
+    query users {
+        users({per_page: 20, page: 2, filter: {name: {"starts_with": "Marcelo"}}}){
+            id
+            name
+        }
+    }
+}
